@@ -1,0 +1,7 @@
+.title-element{
+    @include fmaintitle(); 
+    span{ opacity: .5; }
+
+    &--small{ @include ftitle(); }
+    &--center{ text-align: center; }
+}

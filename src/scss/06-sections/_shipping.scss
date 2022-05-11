@@ -1,0 +1,22 @@
+.shipping{
+    &__item{ 
+        width: 100%;
+        padding: 0 calc(var(--gap)*1.5); 
+
+        @media screen and (max-width: $tablet-medium){ 
+            max-width: 400px;
+            padding: 0;
+        }
+        @media screen and (max-width: $mobile){  max-width: 100% }
+    }
+        &__svg{
+            width: 100%;
+            max-width: 48px;
+        }
+        &__title{ 
+            @include fdescription();
+            font-weight: 600;
+            margin: 10px 0;
+        }
+        &__description{ @include fquote(); }
+}

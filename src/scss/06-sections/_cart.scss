@@ -1,0 +1,72 @@
+.cart{
+    &__info{
+        display: grid;
+        grid-auto-flow: column;
+        justify-content: space-between;
+        padding: var(--gap);
+
+        &-title{ 
+            @include fmenu(); 
+            font-weight: 600;
+        }
+        &-buttons{
+            display: grid;
+            grid-auto-flow: column;
+            gap: var(--gap);
+            justify-content: space-between;
+        }
+    }
+        
+    &__table{
+        width: 100%;
+        @include fmenu();
+        padding: 0 var(--gap);
+
+        td{
+            padding: 6px;
+            text-align: center;
+            text-transform: capitalize;
+
+            &:nth-of-type(1),
+            &:nth-last-of-type(1){ padding-left: 0; padding-right: 0; }
+            &:nth-of-type(1){ width: 1000%; text-align: left;}
+        }
+        &-row{ 
+            display: flex; 
+            justify-content: center;
+            max-width: 100px;
+            overflow: hidden;
+            border-radius: var(--radius);
+            border: 1px solid $black;
+        }
+            &-quantity{
+                @include fdescription();
+                display: inline-flex;
+                justify-content: center;
+                align-items: center;
+                width: 28px;
+                height: 28px;
+            }
+            &-btn{
+                width: 28px;
+                height: 28px;
+                font-size: 20px;
+
+                color: $black;
+                background-color: $white;
+                cursor: pointer;
+            }
+        &-column{ display: grid; }
+            &-title{ @include fsubtitle(); }
+            &-price{ @include fsubtitle(); opacity: .5; }
+    }   
+    &__total{
+        display: flex;
+        justify-content: space-between;
+        margin-top: auto;
+        width: 100%;
+        padding: var(--gap);
+        background-color: $black;
+        color: $white;    
+    }
+}

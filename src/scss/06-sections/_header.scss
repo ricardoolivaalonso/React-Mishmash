@@ -1,0 +1,21 @@
+.main-menu{
+    &__list,
+    &__wrapper{
+        display: grid;
+        grid-template-columns: auto auto;
+        gap: calc(var(--gap)*2);
+        justify-content: space-between;
+        align-items: center;
+
+        @media screen and (max-width: $mobile){ gap: var(--gap); }
+        @media screen and (max-width: $lowest){ grid-template-columns: 1fr; }
+    }
+        &__link{
+            @include fmenu();
+            @include flex(flex, center, center, row, nowrap);
+
+            @media (hover: hover) { 
+                &:hover{ opacity: .5; }
+            }
+        }
+}

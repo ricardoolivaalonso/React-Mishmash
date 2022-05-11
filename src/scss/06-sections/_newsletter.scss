@@ -1,0 +1,56 @@
+.newsletter{
+    &__bg{
+        grid-area: bg;
+        min-height: 250px;
+
+        background-image: url('../../assets/img/newsletter.jpg');
+        background-repeat: no-repeat;
+        background-size: cover;
+        background-position: center;
+    }
+    &__info{
+        grid-area: info;
+        @include flex(flex, flex-end, center, row, nowrap);
+        padding: var(--gap) calc(var(--gap)*4);
+
+        @media screen and (max-width: $tablet-small){ padding: var(--gap) calc(var(--gap)*2); }
+        @media screen and (max-width: $mobile){ padding: 0; }
+    }
+        &__wrapper{ width: 100%; }
+            &__form{
+                display: grid;
+                gap: 5px;
+                width: 100%;
+                max-width: 360px;
+
+                @media screen and (max-width: $tablet-medium){   max-width: 400px; }
+                @media screen and (max-width: $tablet-small){  margin: 0 auto; }
+
+                &-description{ @include fdescription(); }
+
+                &-wrapper{
+                    display: grid;
+                    grid-template-columns: 1fr auto;
+                    gap: 5px;
+                    margin: 10px 0;
+
+                    @media screen and (max-width: $lowest){ grid-template-columns: 1fr; }
+                }
+
+                    &-input,
+                    &-button{
+                        display: block;
+                        height: 40px;
+                        padding: 0 var(--gap);
+                        border-radius: var(--radius);
+                    }
+                    &-input{
+                        border: 1px solid rgba($black, .5);
+                        &::placeholder{ opacity: .5; }
+                    }
+                    &-button{
+                        background-color: $black;
+                        color: $white;
+                    }
+            }
+}

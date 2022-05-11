@@ -1,0 +1,34 @@
+.partner{
+    &__title{
+        @include fdescription();
+        margin-bottom: calc(var(--gap)*2);
+        text-align: center;
+        opacity: .5;
+    }
+
+    &__list{
+        display: grid;
+        grid-template-columns: repeat(4, 1fr);
+        gap: var(--gap);
+        height: 160px;
+        border: 1px solid rgba($black, .125);
+
+        @media screen and (max-width: $tablet-medium){ 
+            grid-template-columns: 1fr 1fr;
+            height: 320px;
+        }
+
+    }
+        &__item{
+            @include flex(flex, center, center, row, nowrap);
+            img{ 
+                width: 100%;
+                max-width: 175px; 
+
+                @media screen and (max-width: $tablet-medium){ max-width: 150px; }
+            }
+            @media (hover: hover) { 
+                &:hover{ opacity: .5; }
+            }
+        }
+}

@@ -1,0 +1,5 @@
+.link-element{
+    @include fdescription();
+    padding: calc(var(--gap)*.125) var(--gap);
+    text-decoration: underline;
+}

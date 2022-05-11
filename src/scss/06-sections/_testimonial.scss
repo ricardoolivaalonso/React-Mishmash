@@ -1,0 +1,11 @@
+.testimonial{
+    &__item{ 
+        padding: 0 calc(var(--gap)*1.5); 
+        @media screen and (max-width: $tablet-medium){ padding: 0; }
+    }
+        &__quote{ @include fquote; }
+        &__author{
+            margin-top: calc(var(--gap)*2); 
+            @include fdescription;
+        }
+}

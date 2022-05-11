@@ -1,0 +1,178 @@
+// @include flex(flex, center, center, row, nowrap);
+.main-container{
+    width: 100%;
+    max-width: var(--max-width);
+    margin: 0 auto;
+    padding: 0 calc(var(--gap)*2);
+
+    @media screen and (max-width: $desktop-small){ padding: 0 var(--gap); }
+}
+.header{
+    width: 100%;
+    padding: var(--gap) 0;
+}
+.promotion{
+    display: grid;
+    gap: var(--gap);
+    overflow: hidden;
+}
+.partner{
+    padding: 128px 0;
+    @media screen and (max-width: $tablet-medium){ padding: 64px 0; }
+}
+.product{
+    display: grid;
+    gap: var(--gap);
+}
+.testimonial{
+    display: grid;
+    grid-auto-flow: column;
+    justify-items: center;
+    gap: var(--gap);
+    padding: 128px 0;
+
+    @media screen and (max-width: $tablet-medium){ 
+        grid-auto-flow: row;
+        padding: 64px 0; 
+        gap: calc(var(--gap)*1.5);
+    }
+}
+.typography{
+    display: grid;
+    padding-bottom: 64px;
+}
+.shipping{
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    justify-items: space-between;
+    gap: calc(var(--gap)*2);
+    padding: 64px 0;
+
+    width: 100%;
+    max-width: 80%;
+    margin: 0 auto;
+
+    @media screen and (max-width: $desktop-medium){ 
+        max-width: 100%;
+        gap: var(--gap);
+    }
+    @media screen and (max-width: $tablet-medium){ 
+        grid-template-columns: 1fr; 
+        justify-items: center;
+    }
+}
+.newsletter{
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-template-areas: "bg info";
+    min-height: 275px;
+
+    @media screen and (max-width: $tablet-small){ 
+        grid-template-columns: 1fr; 
+        grid-template-areas: 
+            "info"
+            "bg"
+        ;
+    }
+}
+.submenu{
+    display: grid;
+    align-items: center;
+    width: 100%;
+    padding-top: calc(var(--gap)*.5);
+    padding-bottom: calc(var(--gap)*1.5);
+
+    &__list{
+        display: grid;
+        grid-auto-flow: column;
+        justify-content: start;
+        gap: var(--gap);
+    }
+}
+.store{
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: var(--gap);
+    padding: 64px 0;
+
+    @media screen and (max-width: $desktop-big){ grid-template-columns: repeat(3, 1fr); }
+    @media screen and (max-width: $desktop-small){ grid-template-columns: repeat(2, 1fr); }
+    @media screen and (max-width: $tablet-small){ grid-template-columns: 1fr; }
+}
+.cart{
+    position: fixed;
+    top: var(--gap);
+    right: var(--gap);
+    z-index: 100;
+    
+    display: flex;
+    flex-direction: column;
+    align-content: start;
+    gap: var(--gap);
+    width: 400px;
+    height: 430px;
+    overflow-y: auto;
+    
+    border-radius: var(--radius);
+    box-shadow: 0px 0px 20px 5px rgba($black, .25);
+    background-color: $white;
+
+    @media screen and (max-width: $tablet-small){ 
+        top: 50%;
+        transform: translateY(-50%);
+        width: calc(100% - var(--gap) * 2);
+        height: auto;
+    }
+
+    svg{
+        width: 28px;
+        height: 28px;
+        fill: $black;
+    }
+}
+.footer{
+    @include flex(flex, space-between, center, row, nowrap);
+    gap: var(--gap);
+    width: 100%;
+    max-width: 900px;
+    margin: 0 auto;
+    padding: 64px 0 32px;
+
+    @media screen and (max-width: $lowest){ 
+        flex-direction: column;
+    }
+}
+
+
+.icon{
+    position: fixed;
+    top: 200px;
+    right: calc(50% - 25px);
+    width: 50px;
+    height: 50px;
+    padding: 10px;
+        
+    z-index: 1000;
+    opacity: 0;
+    background-color: rgba($black, .5);
+    border-radius: calc(var(--radius)*2);
+
+    svg{
+        width: 30px;
+        fill: $white;
+    }
+}
+
+.is-icon-active{
+    animation: icon-tx 1000ms linear, icon-op 1000ms linear;
+}
+
+@keyframes icon-tx {
+    0%, 50%{ right: calc(50% - 25px); }
+    100%{ right: 350px; }
+}
+@keyframes icon-op {
+    0%, 100%{ opacity: 0; }
+    25%, 75%{ opacity: 1; }
+}
+

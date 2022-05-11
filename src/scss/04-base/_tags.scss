@@ -1,0 +1,21 @@
+body{
+    width: 100%;
+    font-size: 16px;
+    font-stretch: 100%;
+    font-weight: 400;
+}
+img{ max-width: 100%; }
+ul{ list-style: none; }
+a{
+    color: $black;
+    text-decoration: none;
+    cursor: pointer;
+}
+button,
+input{
+    appearance: none;
+    box-shadow: none;
+    border: none;
+    background-color: $white;
+    cursor: pointer;
+}

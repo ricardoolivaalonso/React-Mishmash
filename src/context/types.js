@@ -1,0 +1,5 @@
+export const ADD_PRODUCT = "ADD_PRODUCT"
+export const DELETE_PRODUCT = "DELETE_PRODUCT"
+export const DELETE_ITEM = "DELETE_ITEM"
+export const RESET_CART = "RESET_CART"
+export const TOGGLE_MODAL = "TOGGLE_MODAL"

@@ -1,0 +1,10 @@
+.button-element{
+    padding: calc(var(--gap)*.65) var(--gap);
+    border-radius: var(--radius);
+    background-color: $black;
+    color: $white;
+
+    @media (hover: hover) { 
+        &:hover{ opacity: .5; }
+    }
+}

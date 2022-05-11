@@ -1,0 +1,19 @@
+:root{
+    --max-width: 1620px;
+    --gap: 16px;
+    --radius: 4px;
+}
+// Colors
+$white: #ffffff;
+$black: #000000;
+$gray: #131315;
+$red: #c14137;
+// Queries
+$desktop-big: 1400px;
+$desktop-medium: 1200px;
+$desktop-small: 1024px;
+$tablet-medium: 768px;
+$tablet-small: 640px;
+$mobile: 600px;
+$lowest: 320px;
+

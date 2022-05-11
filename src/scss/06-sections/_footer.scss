@@ -1,0 +1,12 @@
+.footer{
+    &__list{
+        display: grid;
+        grid-auto-flow: column;
+        gap: 5px;
+    }
+    &__link{
+        @media (hover: hover) { 
+            &:hover{ opacity: .5; }
+        }
+    }
+}
